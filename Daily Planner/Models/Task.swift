@@ -9,5 +9,6 @@ import Foundation
 
 struct Task: Codable, Identifiable {
     var id: Int?
-    
+    let project_id: Int?
+    let section_id: Int?
 }

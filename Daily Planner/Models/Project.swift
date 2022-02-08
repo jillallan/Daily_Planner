@@ -12,12 +12,12 @@ import Foundation
 //}
 
 struct Project: Codable, Identifiable {
-    var id: Int?
-    var parent_id: Int?
-    var name: String
-    var favorite: Bool?
-    var color: Int?
-    var inbox_project: Bool?
+    let id: Int?
+    let parent_id: Int?
+    let name: String
+    let favorite: Bool?
+    let color: Int?
+    let inbox_project: Bool?
 }
 
 //struct Project
