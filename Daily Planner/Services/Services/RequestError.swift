@@ -13,4 +13,5 @@ enum RequestError: Error {
     case noData
     case encodingError
     case decodingError
+    case apiKeyError
 }

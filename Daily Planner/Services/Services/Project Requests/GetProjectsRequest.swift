@@ -24,7 +24,11 @@ struct GetProjectsRequest: Requestable {
     
     func makeRequest(from url: URL) throws -> URLRequest {
         var request = URLRequest(url: url)
-        request.setValue( "Bearer \(Constants.token)", forHTTPHeaderField: "Authorization")
+        
+        guard let token = Constants.token else { throw RequestError.apiKeyError }
+        
+        print(token)
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
     

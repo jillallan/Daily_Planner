@@ -29,7 +29,11 @@ struct AddProjectRequest: Requestable {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue( "Bearer \(Constants.token)", forHTTPHeaderField: "Authorization")
+        
+        guard let token = Constants.token else { throw RequestError.apiKeyError }
+        print(token)
+        
+        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
         return request
     }
     
