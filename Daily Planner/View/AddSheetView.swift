@@ -11,18 +11,41 @@ struct AddSheetView: View {
     
     @Environment(\.dismiss) var dismiss
     @ObservedObject var projectViewModel: ProjectViewModel
-    @State private var projectName = ""
+    @State private var taskName = ""
 
     
     var body: some View {
         VStack(alignment: .leading) {
-            FormView(projectViewModel: projectViewModel)
-            Button {
-                // Add project
-                dismiss()
-            } label: {
-                Text("Add")
+
+            TextField("Task Name", text: $taskName)
+
+          
+            HStack {
+                Spacer()
+                Button {
+                    // Add task
+                    dismiss()
+                } label: {
+                    Text("Add")
+                        .frame(width: 80)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.mint)
+                
+                Spacer()
+                Button {
+                    // Add task
+                    dismiss()
+                } label: {
+                    Text("Cancel")
+                        .frame(width: 80)
+                }
+                .buttonStyle(.bordered)
+                .foregroundColor(.mint)
+                
+                Spacer()
             }
+
         }
         .padding()
     }
@@ -33,12 +56,3 @@ struct AddSheetView_Previews: PreviewProvider {
         AddSheetView(projectViewModel: ProjectViewModel())
     }
 }
-
-//    @FocusState private var addProjectIsFocused: Bool!
-//                .focused($addProjectIsFocused)
-//                .onAppear {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                        /// Anything over 0.5 seems to work
-//                        self.addProjectIsFocused = true
-//                    }
-//                }

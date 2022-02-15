@@ -20,7 +20,7 @@ struct ButtonView: View {
         .font(.largeTitle)
         .foregroundColor(.white)
         .padding()
-        .background(.blue)
+        .background(Color("BerryRed"))
         .clipShape(Circle())
         .offset(x: -25)
         .labelStyle(.iconOnly)

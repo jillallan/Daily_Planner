@@ -1,18 +1,20 @@
 //
-//  GetProjectsRequest2.swift
+//  GetTasksRequestLoader.swift
 //  Daily Planner
 //
-//  Created by Jill Allan on 02/02/2022.
+//  Created by Jill Allan on 08/02/2022.
 //
 
 import Foundation
 
-struct GetProjectsRequest: Requestable {
+struct GetTasksRequest: Requestable {
     
-    func encodeData(from data: [Project]) throws -> Data? {
+    // Can I make this use a generic input
+    func encodeData(from data: [TodoTask]) throws -> Data? {
         return nil
     }
     
+    // Can I separate this out as duplicated in Get Projects request
     func createURL(category: String, id: Int?) throws -> URL {
         var url = URL(string: Constants.apiAddress)
         url?.appendPathComponent(category)
@@ -22,7 +24,8 @@ struct GetProjectsRequest: Requestable {
         return url
     }
     
-    func makeRequest(from url: URL) throws -> URLRequest {
+    // Can I separate this out as duplicated in Get Projects request
+    func configureRequest(from url: URL, method: String = "GET") throws -> URLRequest {
         var request = URLRequest(url: url)
         
         guard let token = Constants.token else { throw RequestError.apiKeyError }
@@ -32,7 +35,8 @@ struct GetProjectsRequest: Requestable {
         return request
     }
     
-    func decodeResponse(data: Data) throws -> [Project]? {
-        return try JSONDecoder().decode([Project].self, from: data)
+    // Can I use a generic input and opaque return type
+    func decodeResponse(data: Data) throws -> [TodoTask]? {
+        return try JSONDecoder().decode([TodoTask].self, from: data)
     }
 }

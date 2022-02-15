@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Task: Codable, Identifiable {
+struct TodoTask: Codable, Identifiable {
     var id: Int?
-    let project_id: Int?
-    let section_id: Int?
+//    var project_id: Int?
+//    var section_id: Int?
+    let content: String
 }

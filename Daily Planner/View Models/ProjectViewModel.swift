@@ -11,34 +11,38 @@ import Foundation
 class ProjectViewModel: ObservableObject {
     
     @Published var projects = [Project]()
-    @Published var newProject = Project(name: "Placeholder")
+    @Published var todoTasks = [TodoTask]()
     
-    let getProjectsRequest = GetProjectsRequest()
-    var getProjectsRequestLoader: GetProjectsRequestLoader<GetProjectsRequest>!
+    let getTasksRequest = GetTasksRequest()
+    var getTasksRequestLoader: GetTasksRequestLoader<GetTasksRequest>!
+
     
-    let addProjectRequest = AddProjectRequest()
-    var addProjectRequestLoader: AddProjectRequestLoader<AddProjectRequest>!
+    let projectRequest = NetworkRequest<Project>()
+    var requestLoader: RequestLoader<NetworkRequest<Project>>!
+    
+
     
     func loadProjects() async {
-        getProjectsRequestLoader = GetProjectsRequestLoader(apiRequest: getProjectsRequest)
+        requestLoader = RequestLoader(apiRequest: projectRequest)
         do {
-            if let projectArray = try await getProjectsRequestLoader.loadRequest(category: "projects") {
-                self.projects = projectArray
+            let projectArray = try await requestLoader.loadRequest(category: "projects", id: nil, with: nil)
+            self.projects = projectArray!
+//            self.projects = projectArray as! [Project]
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+        
+    func loadTasks() async {
+        getTasksRequestLoader = GetTasksRequestLoader(apiRequest: getTasksRequest)
+        do {
+            if let todoTaskArray = try await getTasksRequestLoader.loadRequest(category: "tasks") {
+                self.todoTasks = todoTaskArray
             }
         } catch {
             print(error.localizedDescription)
         }
     }
-    
-    func addProject(_ project: String) async {
-        let newProject = Project(name: project)
-        addProjectRequestLoader = AddProjectRequestLoader(apiRequest: addProjectRequest)
-        do {
-            if let project = try await addProjectRequestLoader.loadRequest(category: "projects", with: newProject) {
-                self.newProject = project
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+
 }

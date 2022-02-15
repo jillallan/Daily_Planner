@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781009CC27BC3A0800BA8EB0 /* RequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781009CB27BC3A0800BA8EB0 /* RequestLoader.swift */; };
+		781009CE27BC3E3100BA8EB0 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781009CD27BC3E3100BA8EB0 /* NetworkRequest.swift */; };
 		783961DB27B17E470076F901 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961DA27B17E470076F901 /* ButtonView.swift */; };
-		783961DF27B262470076F901 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961DE27B262470076F901 /* Projects.swift */; };
-		783961E127B262F90076F901 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961E027B262F90076F901 /* Task.swift */; };
+		783961E127B262F90076F901 /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961E027B262F90076F901 /* TodoTask.swift */; };
 		783961E327B264B60076F901 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961E227B264B60076F901 /* Section.swift */; };
+		783961E927B284A90076F901 /* ProjectListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961E827B284A90076F901 /* ProjectListViewCell.swift */; };
+		783961EB27B288A60076F901 /* GetTasksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961EA27B288A60076F901 /* GetTasksRequest.swift */; };
+		783961ED27B28C060076F901 /* TodoTasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961EC27B28C060076F901 /* TodoTasksListView.swift */; };
+		783961EF27B28FE50076F901 /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783961EE27B28FE50076F901 /* ProjectListView.swift */; };
 		78837A7F27A9EDBD005627AE /* API_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837A7E27A9EDBD005627AE /* API_Tests.swift */; };
 		78837A9527AAC487005627AE /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837A9427AAC487005627AE /* Requestable.swift */; };
-		78837AA127AACE70005627AE /* AddProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837AA027AACE70005627AE /* AddProjectRequest.swift */; };
-		78837AA327AACE7D005627AE /* AddProjectRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837AA227AACE7D005627AE /* AddProjectRequestLoader.swift */; };
-		78837AA527AACE8E005627AE /* GetProjectsRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837AA427AACE8E005627AE /* GetProjectsRequestLoader.swift */; };
-		78837AA727AACEA1005627AE /* GetProjectsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837AA627AACEA1005627AE /* GetProjectsRequest.swift */; };
+		78837AA527AACE8E005627AE /* GetTasksRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837AA427AACE8E005627AE /* GetTasksRequestLoader.swift */; };
 		789DE9F627A82C63000DEC90 /* Daily_PlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789DE9F527A82C63000DEC90 /* Daily_PlannerApp.swift */; };
 		789DE9FA27A82C64000DEC90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789DE9F927A82C64000DEC90 /* Assets.xcassets */; };
 		789DE9FD27A82C64000DEC90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 789DE9FC27A82C64000DEC90 /* Preview Assets.xcassets */; };
@@ -28,9 +30,9 @@
 		789DEA3227A966A3000DEC90 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789DEA3127A966A3000DEC90 /* RequestError.swift */; };
 		789DEA3427A967E1000DEC90 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789DEA3327A967E1000DEC90 /* ProjectViewModel.swift */; };
 		789DEA3A27A97CD1000DEC90 /* API_Integration_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789DEA3927A97CD1000DEC90 /* API_Integration_Tests.swift */; };
-		78BF331C27B14F28007304A0 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF331B27B14F28007304A0 /* ProjectView.swift */; };
+		78BF331C27B14F28007304A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF331B27B14F28007304A0 /* ContentView.swift */; };
 		78BF332227B15B39007304A0 /* AddSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF332127B15B39007304A0 /* AddSheetView.swift */; };
-		78BF332427B15D04007304A0 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF332327B15D04007304A0 /* FormView.swift */; };
+		78BF332427B15D04007304A0 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BF332327B15D04007304A0 /* ProjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,16 +53,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		781009CB27BC3A0800BA8EB0 /* RequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoader.swift; sourceTree = "<group>"; };
+		781009CD27BC3E3100BA8EB0 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		783961DA27B17E470076F901 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		783961DE27B262470076F901 /* Projects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
-		783961E027B262F90076F901 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		783961E027B262F90076F901 /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
 		783961E227B264B60076F901 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		783961E827B284A90076F901 /* ProjectListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewCell.swift; sourceTree = "<group>"; };
+		783961EA27B288A60076F901 /* GetTasksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTasksRequest.swift; sourceTree = "<group>"; };
+		783961EC27B28C060076F901 /* TodoTasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTasksListView.swift; sourceTree = "<group>"; };
+		783961EE27B28FE50076F901 /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
 		78837A7E27A9EDBD005627AE /* API_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Tests.swift; sourceTree = "<group>"; };
 		78837A9427AAC487005627AE /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		78837AA027AACE70005627AE /* AddProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectRequest.swift; sourceTree = "<group>"; };
-		78837AA227AACE7D005627AE /* AddProjectRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectRequestLoader.swift; sourceTree = "<group>"; };
-		78837AA427AACE8E005627AE /* GetProjectsRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjectsRequestLoader.swift; sourceTree = "<group>"; };
-		78837AA627AACEA1005627AE /* GetProjectsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjectsRequest.swift; sourceTree = "<group>"; };
+		78837AA427AACE8E005627AE /* GetTasksRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTasksRequestLoader.swift; sourceTree = "<group>"; };
 		789DE9F227A82C63000DEC90 /* Daily Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		789DE9F527A82C63000DEC90 /* Daily_PlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_PlannerApp.swift; sourceTree = "<group>"; };
 		789DE9F927A82C64000DEC90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,9 +81,9 @@
 		789DEA3927A97CD1000DEC90 /* API_Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Integration_Tests.swift; sourceTree = "<group>"; };
 		78BBD59C27B12793004F408C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		78BBD59D27B128A6004F408C /* Daily-Planner-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Daily-Planner-Info.plist"; sourceTree = SOURCE_ROOT; };
-		78BF331B27B14F28007304A0 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		78BF331B27B14F28007304A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78BF332127B15B39007304A0 /* AddSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSheetView.swift; sourceTree = "<group>"; };
-		78BF332327B15D04007304A0 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		78BF332327B15D04007304A0 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,21 +116,21 @@
 			children = (
 				789DEA3127A966A3000DEC90 /* RequestError.swift */,
 				78837A9427AAC487005627AE /* Requestable.swift */,
-				78837A9F27AACE5E005627AE /* Project Requests */,
+				781009CB27BC3A0800BA8EB0 /* RequestLoader.swift */,
+				781009CD27BC3E3100BA8EB0 /* NetworkRequest.swift */,
+				78837A9F27AACE5E005627AE /* Task Requests */,
 			);
 			name = Services;
 			path = Services/Services;
 			sourceTree = "<group>";
 		};
-		78837A9F27AACE5E005627AE /* Project Requests */ = {
+		78837A9F27AACE5E005627AE /* Task Requests */ = {
 			isa = PBXGroup;
 			children = (
-				78837AA027AACE70005627AE /* AddProjectRequest.swift */,
-				78837AA227AACE7D005627AE /* AddProjectRequestLoader.swift */,
-				78837AA627AACEA1005627AE /* GetProjectsRequest.swift */,
-				78837AA427AACE8E005627AE /* GetProjectsRequestLoader.swift */,
+				783961EA27B288A60076F901 /* GetTasksRequest.swift */,
+				78837AA427AACE8E005627AE /* GetTasksRequestLoader.swift */,
 			);
-			path = "Project Requests";
+			path = "Task Requests";
 			sourceTree = "<group>";
 		};
 		789DE9E927A82C63000DEC90 = {
@@ -196,10 +200,9 @@
 		789DEA3527A96E36000DEC90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				783961DE27B262470076F901 /* Projects.swift */,
 				789DEA2A27A881A2000DEC90 /* Project.swift */,
 				783961E227B264B60076F901 /* Section.swift */,
-				783961E027B262F90076F901 /* Task.swift */,
+				783961E027B262F90076F901 /* TodoTask.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,8 +218,11 @@
 		789DEA3827A9715F000DEC90 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78BF331B27B14F28007304A0 /* ProjectView.swift */,
-				78BF332327B15D04007304A0 /* FormView.swift */,
+				78BF331B27B14F28007304A0 /* ContentView.swift */,
+				783961EE27B28FE50076F901 /* ProjectListView.swift */,
+				783961EC27B28C060076F901 /* TodoTasksListView.swift */,
+				783961E827B284A90076F901 /* ProjectListViewCell.swift */,
+				78BF332327B15D04007304A0 /* ProjectView.swift */,
 				78BF332127B15B39007304A0 /* AddSheetView.swift */,
 				783961DA27B17E470076F901 /* ButtonView.swift */,
 			);
@@ -354,21 +360,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				783961E327B264B60076F901 /* Section.swift in Sources */,
-				78BF332427B15D04007304A0 /* FormView.swift in Sources */,
-				78837AA127AACE70005627AE /* AddProjectRequest.swift in Sources */,
-				78837AA727AACEA1005627AE /* GetProjectsRequest.swift in Sources */,
+				78BF332427B15D04007304A0 /* ProjectView.swift in Sources */,
 				789DE9F627A82C63000DEC90 /* Daily_PlannerApp.swift in Sources */,
-				78BF331C27B14F28007304A0 /* ProjectView.swift in Sources */,
-				78837AA527AACE8E005627AE /* GetProjectsRequestLoader.swift in Sources */,
+				781009CC27BC3A0800BA8EB0 /* RequestLoader.swift in Sources */,
+				783961E927B284A90076F901 /* ProjectListViewCell.swift in Sources */,
+				78BF331C27B14F28007304A0 /* ContentView.swift in Sources */,
+				78837AA527AACE8E005627AE /* GetTasksRequestLoader.swift in Sources */,
 				783961DB27B17E470076F901 /* ButtonView.swift in Sources */,
 				789DEA2B27A881A2000DEC90 /* Project.swift in Sources */,
-				783961E127B262F90076F901 /* Task.swift in Sources */,
+				783961E127B262F90076F901 /* TodoTask.swift in Sources */,
 				78BF332227B15B39007304A0 /* AddSheetView.swift in Sources */,
+				783961EF27B28FE50076F901 /* ProjectListView.swift in Sources */,
+				783961ED27B28C060076F901 /* TodoTasksListView.swift in Sources */,
 				789DEA3427A967E1000DEC90 /* ProjectViewModel.swift in Sources */,
-				78837AA327AACE7D005627AE /* AddProjectRequestLoader.swift in Sources */,
+				781009CE27BC3E3100BA8EB0 /* NetworkRequest.swift in Sources */,
 				789DEA3227A966A3000DEC90 /* RequestError.swift in Sources */,
-				783961DF27B262470076F901 /* Projects.swift in Sources */,
 				78837A9527AAC487005627AE /* Requestable.swift in Sources */,
+				783961EB27B288A60076F901 /* GetTasksRequest.swift in Sources */,
 				789DEA2927A880C2000DEC90 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

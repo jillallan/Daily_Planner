@@ -13,6 +13,6 @@ protocol Requestable {
 
     func encodeData(from data: RequestDataType) throws -> Data?
     func createURL(category: String, id: Int?) throws -> URL
-    func makeRequest(from url: URL) throws -> URLRequest
+    func configureRequest(from url: URL, method: String) throws -> URLRequest
     func decodeResponse(data: Data) throws -> ResponseDataType?
 }

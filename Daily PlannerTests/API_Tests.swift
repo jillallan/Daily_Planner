@@ -10,7 +10,7 @@ import XCTest
 
 class API_Tests: XCTestCase {
     
-    var requestLoader: GetProjectsRequestLoader<GetProjectsRequest>!
+    var requestLoader: GetTasksRequestLoader<GetProjectsRequest>!
     let request = GetProjectsRequest()
     
 
@@ -20,7 +20,7 @@ class API_Tests: XCTestCase {
         config.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession(configuration: config)
         
-        requestLoader = GetProjectsRequestLoader(apiRequest: request, urlSession: urlSession)
+        requestLoader = GetTasksRequestLoader(apiRequest: request, urlSession: urlSession)
     }
 
     override func tearDownWithError() throws {
@@ -31,7 +31,7 @@ class API_Tests: XCTestCase {
 
         let url = URL(string: "https://api.todoist.com/rest/v1/projects")
         
-        let urlRequest = try request.makeRequest(from: url!)
+        let urlRequest = try request.configureRequest(from: url!)
         
         XCTAssertEqual(urlRequest.url?.scheme, "https")
         XCTAssertEqual(urlRequest.url?.host, "api.todoist.com")
@@ -59,10 +59,4 @@ class API_Tests: XCTestCase {
         
     }
     
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 }
